@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sorgo do Vale conecta o campo à cidade, oferecendo produtos frescos da agricultura familiar com foco em sustentabilidade, sabor e oportunidades." />
+  <meta name="author" content="Otávio Miguel" />
+
+  <link rel="preload" href="assets/img/cursor.cur" as="image" />
+
+  <!-- Link css -->
+  <link rel="stylesheet" href="assets/css/paginas/index/styles.css" />
+  <link rel="stylesheet" href="assets/css/paginas/responsivo/mobile.css" />
+
+  <!-- Link fonts Adequadas para Acessibilidade -->
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet" />
+
+  <!-- Title main -->
+  <title>Agrinho 2025</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/sorgo-icon.png" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- === Inputs Globais de Acessibilidade === -->
+  <input type="checkbox" id="fontSizeToggle" class="option-toggle" />
+  <input type="checkbox" id="cursorToggle" class="option-toggle" />
+  <input type="checkbox" id="contrastToggle" class="option-toggle" />
+  <input type="checkbox" id="linksModeToggle" class="option-toggle" />
+  <input type="checkbox" id="grayScaleToggle" class="option-toggle" />
+  <input type="checkbox" id="darkModeToggle" class="option-toggle" />
+
+  <header>
+    <!-- === Painel de Acessibilidade === -->
+    <input type="checkbox" id="accessibilityToggle" class="accessibility-toggle" />
+
+    <!-- Botão flutuante de Acessibilidade -->
+    <label for="accessibilityToggle" class="accessibility-btn pulse-animation"
+      aria-label="Abrir painel de acessibilidade" tabindex="0">
+      <img class="icon-open" src="assets/img/accessibility-icon.png" alt="Abrir painel de acessibilidade" />
+      <img class="icon-close" src="assets/img/accessibility-icon-close.png" alt="Fechar painel de acessibilidade" />
+    </label>
+
+    <!-- Painel de Opções de Acessibilidade -->
+    <div class="accessibility-panel">
+      <h2 class="text-lg font-semibold text-gray-800 mb-3">
+        Opções de Acessibilidade
+      </h2>
+
+      <!-- Cursor Ampliado -->
+      <label for="cursorToggle" class="accessibility-option desktop-only" id="cursor-label" tabindex="0">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-cursorToggle.png" alt="" />
+        </div>
+        <span>Cursor Ampliado</span>
+      </label>
+
+      <!-- Aumentar Fonte -->
+      <label for="fontSizeToggle" class="accessibility-option" id="font-label" tabindex="0">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-fontSizeToggle.png" alt="Fonte Aumentada" />
+        </div>
+        <span>Aumentar Fonte</span>
+      </label>
+
+      <!-- Alto Contraste -->
+      <label for="contrastToggle" class="accessibility-option" id="contrast-label" tabindex="0">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-contrastToggle.png" alt="" />
+        </div>
+        <span>Alto Contraste</span>
+      </label>
+
+      <!-- Links em Destaque -->
+      <label for="linksModeToggle" class="accessibility-option" id="linksmode-label" tabindex="0">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-linksModeToggle.png" alt="" />
+        </div>
+        <span>Links em Destaque</span>
+      </label>
+
+      <!-- Escala de Cinza -->
+      <label for="grayScaleToggle" class="accessibility-option" id="grayscale-label" tabindex="0">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-grayScaleToggle.png" alt="" />
+        </div>
+        <span>Escala de Cinza</span>
+      </label>
+
+      <!-- Botão de Redefinir -->
+      <button id="resetAccessibility" class="accessibility-option resetAccessibility">
+        <div class="accessibility-icon">
+          <img src="assets/img/accessibility-reset.png" alt="" />
+        </div>
+        <span>Redefinir Acessibilidade</span>
+      </button>
+    </div>
+
+    <!-- === Navegação Principal === -->
+    <nav class="navegation">
+      <div class="nav-left">
+        <span class="logo">
+          <img src="assets/img/sorgo-icon.png" alt="Logo Sorgo do Vale" />
+        </span>
+      </div>
+
+      <!-- Toggle do Menu Mobile -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="mobile-menu" aria-label="Abrir menu de navegação" tabindex="0">
+        <div class="nav-icon"><span></span></div>
+      </label>
+
+      <!-- Menu Desktop -->
+      <ul class="nav-list">
+        <li><a href="#home" id="link-home" aria-current="page">Início</a></li>
+        <li><a href="loja.html" id="link-produtos">Loja</a></li>
+        <li><a href="#receitas" id="link-receitas">Receitas</a></li>
+        <li><a href="sobre.html" id="link-sobre">Sobre nós</a></li>
+      </ul>
+
+      <!-- === Menu Mobile Deslizante === -->
+      <ul class="header-menu">
+        <li><a href="#home" aria-current="page">Início</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="#receitas">Receitas</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+        <li>
+          <!-- Botão modo noturno mobile -->
+          <label for="darkModeToggle" class="btn-mode-night mobile-only"
+            aria-label="Ativar ou desativar modo noturno"></label>
+
+          <!-- Botão idioma mobile -->
+          <label for="languageToggle" class="languageButton mobile-only" aria-label="Abrir painel de idiomas"
+            tabindex="0">
+            <img class="brlanguage" src="assets/img/br.png" alt="Trocar idioma" />
+          </label>
+        </li>
+      </ul>
+
+      <!-- === Botões Nav Desktop === -->
+      <div class="nav-right">
+        <!-- Botão idioma desktop -->
+        <label for="languageToggle" class="languageButton desktop-only" aria-label="Abrir painel de idiomas"
+          tabindex="0">
+          <img class="brlanguage" src="assets/img/br.png" alt="Trocar idioma" />
+        </label>
+        <input type="checkbox" id="languageToggle" class="languageToggle" />
+
+        <!-- Painel Idioma -->
+        <div class="language-panel">
+          <label for="languageToggle" class="close-language-panel" aria-label="Fechar painel de idiomas"
+            tabindex="0">✖</label>
+          <h1>Selecione o idioma</h1>
+          <div class="language-options">
+            <span class="lang-btn br" aria-label="Português" aria-current="page">🇧🇷 Português</span>
+            <a href="english/index-en.html" class="lang-btn en" aria-label="Inglês" tabindex="0">🇬🇧 English</a>
+          </div>
+        </div>
+
+        <!-- Botão modo noturno desktop -->
+        <label for="darkModeToggle" class="btn-mode-night desktop-only"
+          aria-label="Ativar ou desativar modo noturno" tabindex="0"></label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- === Background no topo da página === -->
+  <div class="backgroundimage" id="home">
+    <img src="assets/img/sorgo.jpg" alt="Banner com plantação de sorgo" />
+  </div>
+
+  <section class="sobre">
+    <!-- === Seção Breve Sobre === -->
+    <div class="brevesobre">
+      <h1>Sorgo do Vale</h1>
+      <hr class="styled-line" />
+      <p>
+        No <b>Sorgo do Vale</b>, celebramos a conexão entre o campo e a
+        cidade. Nossa missão é levar alimentos frescos, cultivados com
+        cuidado, até a mesa das famílias urbanas, promovendo saúde,
+        sustentabilidade e oportunidades.
+      </p>
+      <p>
+        Valorizamos a agricultura familiar, incentivamos o protagonismo jovem
+        no campo e acreditamos que festejar essa união é construir pontes para
+        um futuro mais justo e próspero.
+      </p>
+      <hr class="styled-line" />
+    </div>
+  </section>
+
+  <!-- === Seção Produtos === -->
+  <section class="produtos" id="produtos">
+    <!-- === Título dos Produtos === -->
+    <div class="produtos-header">
+      <br /><br />
+      <h1>Conheça nossos</h1>
+      <h2>Produtos</h2>
+    </div>
+
+    <!-- === Galeria de Produtos === -->
+    <div class="produtos-galeria">
+      <div class="produtos-lista">
+        <!-- Produto 1 -->
+        <div class="produto-item">
+          <img src="assets/img/caqui.png" alt="Caqui" />
+          <div class="descricao">
+            <h2>Caqui</h2>
+            <p>
+              Doce, macio e rico em fibras. Ideal para sobremesas frescas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-item">
+          <img src="assets/img/banana.png" alt="Banana Nanica" />
+          <div class="descricao">
+            <h2>Banana Nanica</h2>
+            <p>Fonte de energia, ideal para lanches saudáveis.</p>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-item">
+          <img src="assets/img/repolho.png" alt="Repolho" />
+          <div class="descricao">
+            <h2>Repolho</h2>
+            <p>Excelente para saladas e refogados nutritivos.</p>
+          </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-item">
+          <img src="assets/img/manga.png" alt="Manga" />
+          <div class="descricao">
+            <h2>Manga Palmer</h2>
+            <p>Doce e suculenta, perfeita para sucos e sobremesas.</p>
+          </div>
+        </div>
+      </div>
+      <!-- === Indicadores decorativos === -->
+      <div class="produtos-indicadores">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- === Botão Loja === -->
+    <div class="saibamais">
+      <button onclick="window.location.href='loja.html'">
+        Acesse nossa loja
+      </button>
+    </div>
+  </section>
+
+  <!-- === Seção Receitas === -->
+  <section class="receitas" id="receitas">
+    <!-- Título da Seção fora do container para ficar dentro do fundo -->
+    <div class="receitas-container">
+      <h1>Experimente nossas</h1>
+      <h2>Receitas</h2>
+
+      <!-- === Livro de Receitas === -->
+      <div class="livroreceitas">
+        <!-- === Receita: Bolo de Cenoura === -->
+        <div class="receita bolo">
+          <span class="etiqueta">🍽 Serve 6</span>
+          <button class="saiba-mais">🔍 Saiba Mais</button>
+          <h3>Bolo de Cenoura</h3>
+          <img src="assets/img/bolodecenoura.png" alt="Bolo de cenoura" />
+          <div class="nutricional">🥕 Rico em Vitamina A</div>
+          <p class="paragrafo">
+            <strong>Ingredientes:</strong><br />
+            3 cenouras médias, 3 ovos, 1 xíc. de óleo, 2 xíc. de açúcar, 2
+            xíc. de farinha de trigo, 1 col. de fermento.<br /><br />
+            <strong>Modo de preparo:</strong><br />
+            Bata os líquidos, misture os secos, leve ao forno 180°C por 40
+            min.
+          </p>
+        </div>
+
+        <!-- === Receita: Panqueca de Banana === -->
+        <div class="receita">
+          <span class="etiqueta">🍽 Serve 2</span>
+          <button class="saiba-mais">🔍 Saiba Mais</button>
+          <h3>Panqueca de Banana</h3>
+          <img src="assets/img/panqueca.png" alt="Panqueca de banana" />
+          <div class="nutricional">🍌 Fonte de Potássio</div>
+          <p class="paragrafo">
+            <strong>Ingredientes:</strong><br />
+            1 banana madura, 2 ovos, óleo para untar.<br /><br />
+            <strong>Modo de preparo:</strong><br />
+            Amasse a banana e misture os ovos até formar uma massa homogênea.
+            Aqueça uma frigideira antiaderente untada, despeje pequenas
+            porções e doure dos dois lados.
+          </p>
+        </div>
+
+        <!-- === Receita: Batata na Airfryer === -->
+        <div class="receita">
+          <span class="etiqueta">🍽 Serve 3</span>
+          <button class="saiba-mais">🔍 Saiba Mais</button>
+          <h3>Batata na Airfryer</h3>
+          <img src="assets/img/batata-airfryer.png" alt="Batata na airfryer" />
+          <div class="nutricional">🥔 Rica em Fibras</div>
+          <p class="paragrafo">
+            <strong>Ingredientes:</strong><br />
+            3 batatas grandes, 1 col. de sopa de azeite de oliva, sal e
+            pimenta a gosto.<br /><br />
+            <strong>Modo de preparo:</strong><br />
+            Corte as batatas em tiras e tempere. Preaqueça a airfryer a 200°C.
+            Disponha as batatas em camada única e asse por 15 a 20 minutos ou
+            até dourar.
+          </p>
+        </div>
+
+        <!-- === Receita: Pão Caseiro === -->
+        <div class="receita">
+          <span class="etiqueta">🍞 Serve 4</span>
+          <button class="saiba-mais">🔍 Saiba Mais</button>
+          <h3>Pão Caseiro Artesanal</h3>
+          <img src="assets/img/pao.png" alt="Pão Caseiro Artesanal" />
+          <div class="nutricional">🌱 Fermentação Natural</div>
+          <p class="paragrafo">
+            <strong>Ingredientes:</strong><br />
+            500g de farinha de trigo, 300ml de água filtrada, 100g de fermento
+            natural (levain), 10g de sal.<br /><br />
+            <strong>Modo de preparo:</strong><br />
+            Misture todos os ingredientes até formar uma massa homogênea.
+            Deixe descansar por 30 minutos, depois faça dobras na massa.
+            Coloque na geladeira por pelo menos 12 horas para a fermentação
+            natural. Retire, modele o pão, deixe crescer até dobrar de tamanho
+            e asse em forno pré-aquecido a 220°C por cerca de 30 a 40 minutos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === Mapa Interativo === -->
+  <section>
+    <div class="interactive-map">
+      <h1>Qual o seu objetivo?</h1>
+      <div class="map-container">
+        <div class="map-wrapper">
+          <!-- === Ícones Fixos === -->
+          <div class="school-wrapper" tabindex="0">
+            <img src="assets/img/school.png" class="school" alt="Escola" />
+          </div>
+
+          <div class="market-wrapper" tabindex="0">
+            <img src="assets/img/market.png" class="market" alt="Mercado" />
+          </div>
+
+          <div class="dome-wrapper" tabindex="0">
+            <img src="assets/img/dome.png" class="dome" alt="Cúpula" />
+          </div>
+
+          <div class="wheat-wrapper" tabindex="0">
+            <img src="assets/img/wheat.png" class="wheat" alt="Trigo" />
+          </div>
+
+          <div class="corn-wrapper" tabindex="0">
+            <img src="assets/img/corn.png" class="corn" alt="Milho" />
+          </div>
+
+          <div class="warehouse-wrapper" tabindex="0">
+            <img src="assets/img/warehouse.png" class="warehouse" alt="Armazém" />
+          </div>
+
+          <div class="farm-wrapper" tabindex="0">
+            <img src="assets/img/farm.png" class="farm" alt="Fazenda com energia solar" />
+          </div>
+
+          <!-- === Imagem do Mapa === -->
+          <img src="assets/img/all.png" class="map-all no-link" alt="Mapa completo" />
+
+          <!-- === Cards Informativos === -->
+          <div class="info-card school-info">
+            <span>🏫</span>
+            <h2>Colégio Estadual</h2>
+            <p>
+              O colégio incentiva práticas sustentáveis e ações voltadas ao
+              agro com os alunos da comunidade.
+            </p>
+          </div>
+
+          <div class="info-card market-info">
+            <span>🛒</span>
+            <h2>Mercado Local</h2>
+            <p>
+              Espaço onde produtos da agricultura familiar são comercializados
+              diretamente com a população urbana.
+            </p>
+          </div>
+
+          <div class="info-card dome-info">
+            <span>🎪</span>
+            <h2>Estufa Comunitária</h2>
+            <p>
+              Local de cultivo protegido, onde técnicas modernas são aplicadas
+              para aumentar a produtividade e sustentabilidade.
+            </p>
+          </div>
+
+          <div class="info-card wheat-info">
+            <span>🌾</span>
+            <h2>Plantação de Trigo</h2>
+            <p>
+              Área rural destinada ao cultivo de grãos, utilizada como exemplo
+              de produção agrícola consciente.
+            </p>
+          </div>
+
+          <div class="info-card corn-info">
+            <span>🌽</span>
+            <h2>Milharal</h2>
+            <p>
+              Plantação de milho responsável por abastecer mercados locais e
+              estimular o consumo de produtos regionais.
+            </p>
+          </div>
+
+          <div class="info-card farm-info">
+            <span>🌞</span>
+            <h2>Fazenda Sustentável</h2>
+            <p>
+              Esta fazenda utiliza energia solar e técnicas sustentáveis para
+              produção agrícola consciente.
+            </p>
+          </div>
+
+          <div class="info-card warehouse-info">
+            <span>📦</span>
+            <h2>Armazém Central</h2>
+            <p>
+              Responsável por armazenar, organizar e distribuir os produtos da
+              agricultura familiar com eficiência.
+            </p>
+          </div>
+        </div>
+
+        <!-- === Ilustração ao lado === -->
+        <img class="woman no-link" src="assets/img/interact-map.png" alt="Ilustração de mulher com mapa interativo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- === Seção Sustentabilidade === -->
+  <section class="susten">
+    <div class="sustentabilidade">
+      <hr class="styled-line" />
+      <h1>Sustentabilidade</h1>
+      <img src="assets/img/sustentabilidade.png" alt="Imagem de Sustentabilidade" />
+      <p>
+        Escolher os produtos da Sorgo do Vale é celebrar a união entre campo e
+        cidade, valorizando a produção local, o consumo consciente e um futuro
+        mais sustentável. Venha festejar essa conexão com a gente!
+      </p>
+    </div>
+  </section>
+
+  <!-- === Rodapé === -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="marca">
+        <a href="#home">
+          <img src="assets/img/sorgo-icon.png" alt="Logo Sorgo do Vale" />
+        </a>
+        <p>Do Campo à Cidade: Plantando Pontes, Colhendo Sonhos</p>
+      </div>
+
+      <div class="links" role="navigation" aria-label="Links rápidos do rodapé">
+        <strong class="titulo">Links rápidos</strong>
+        <div>
+          <a href="#home">Início</a>
+          <a href="loja.html">Loja</a>
+          <a href="#receitas">Receitas</a>
+          <a href="sobre.html">Sobre Nós</a>
+        </div>
+      </div>
+
+      <div class="info">
+        <strong class="titulo">Encontre-nos</strong>
+        <p>
+          <span>📞</span> WhatsApp:
+          <a href="https://wa.me/5543998211269" target="_blank">(43) 9 9821-1269</a>
+        </p>
+        <p class="no-scale">
+          <span>✉️</span> Email:
+          <a href="mailto:otavio.araujo.oliveira@escola.pr.gov.br">otavio.araujo.oliveira@escola.pr.gov.br</a>
+        </p>
+      </div>
+
+      <!-- === Formulário de Contato === -->
+      <div class="contato-footer">
+        <strong class="titulo">Contato Rápido</strong>
+        <form action="#" method="post" onsubmit="return false">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+          <label for="categoria">Categoria de interesse:</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione...</option>
+            <option value="frutas">Frutas</option>
+            <option value="verduras">Verduras</option>
+            <option value="legumes">Legumes</option>
+          </select>
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Digite sua mensagem" required></textarea>
+
+          <!-- Checkbox escondido -->
+          <input type="checkbox" id="enviarToggle" hidden />
+
+          <!-- Botão é um label -->
+          <label for="enviarToggle" class="botao-enviar">Enviar</label>
+
+          <!-- Mensagem de sucesso -->
+          <p class="mensagem-sucesso">Mensagem enviada com sucesso!</p>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- === Copyright === -->
+  <div id="copyright">
+    <p>Agrinho 2025 — Copyright ©2025 Sorgo do Vale</p>
+    <p>Todas as imagens são de autoria própria: © Otávio Miguel</p>
+  </div>
+
+  <!-- === Scripts === -->
+  <script src="assets/js/scripts.js" defer></script>
+</body>
+
+</html>
